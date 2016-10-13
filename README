@@ -1,0 +1,15 @@
+############ WARNING ############
+This is a hobby project and is far from optimized.
+
+Now that you have been warned :-
+
+This setup consists of three components:-
+
+1) TweetStreaming:-
+	A maven project to collect and store tweets pertaining to certain filters like language, keywords etc in a json file. It DOESN'T store the entire tweet json as returned by twitter4j but only certain fields. Build it via maven, run it via java -jar 'jarName', stop it via CTRL-C(sorry)
+	
+2) TweetFormatting:-
+	A maven project to format the tweets collected by TweetStreaming so that te resultant json file ca be indexed in a preconfigured instance of Apache Solr.(See 3)
+	
+3) ApacheSolrConf:- 
+	I have included the managed-schema file containing configurations of solr instance(>=6.2.0). Among other things, I use korean stopwords and a different file for Spanish Stopwords(Both are included in lang folder).
